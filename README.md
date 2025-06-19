@@ -1,65 +1,43 @@
-# veld README
+# Veld Language for VSCode/VSCodium
 
-This is the README for your extension "veld". After writing up a brief description, we recommend including the following sections.
+This extension provides language support for the Veld programming language in Visual Studio Code and VSCodium.
 
 ## Features
 
-Describe specific features of your extension including screenshots of your extension in action. Image paths are relative to this README file.
+- Syntax highlighting for Veld files (`.veld`)
+- Basic language configuration (comments, brackets, etc.)
+- Code snippet support (coming soon)
 
-For example if there is an image subfolder under your extension project workspace:
+## Installation
 
-\!\[feature X\]\(images/feature-x.png\)
+### From VSIX
 
-> Tip: Many popular extensions utilize animations. This is an excellent way to show off your extension! We recommend short, focused animations that are easy to follow.
+1. Download the `.vsix` file from the latest release
+2. Open VSCode/VSCodium
+3. Go to Extensions view (Ctrl+Shift+X)
+4. Click the "..." menu at the top of the Extensions view
+5. Select "Install from VSIX..."
+6. Navigate to the downloaded `.vsix` file and select it
 
-## Requirements
+### From Source
 
-If you have any requirements or dependencies, add a section describing those and how to install and configure them.
+1. Clone the repository
+2. Run `npm install`
+3. Run `npm run compile`
+4. Run `npx vsce package`
+5. Install the generated `.vsix` file as described above
 
-## Extension Settings
+## Language Features
 
-Include if your extension adds any VS Code settings through the `contributes.configuration` extension point.
+### Syntax Highlighting
 
-For example:
+The extension supports syntax highlighting for:
+- Keywords (`fn`, `proc`, `if`, `else`, etc.)
+- Built-in types (`i32`, `f64`, `bool`, etc.)
+- Comments (line comments with `#` and block comments with `#[[` and `]]`)
+- Strings, numbers, and other literals
+- Operators and punctuation
 
-This extension contributes the following settings:
+## Contributing
 
-* `myExtension.enable`: Enable/disable this extension.
-* `myExtension.thing`: Set to `blah` to do something.
-
-## Known Issues
-
-Calling out known issues can help limit users opening duplicate issues against your extension.
-
-## Release Notes
-
-Users appreciate release notes as you update your extension.
-
-### 1.0.0
-
-Initial release of ...
-
-### 1.0.1
-
-Fixed issue #.
-
-### 1.1.0
-
-Added features X, Y, and Z.
-
----
-
-## Working with Markdown
-
-You can author your README using Visual Studio Code. Here are some useful editor keyboard shortcuts:
-
-* Split the editor (`Cmd+\` on macOS or `Ctrl+\` on Windows and Linux).
-* Toggle preview (`Shift+Cmd+V` on macOS or `Shift+Ctrl+V` on Windows and Linux).
-* Press `Ctrl+Space` (Windows, Linux, macOS) to see a list of Markdown snippets.
-
-## For more information
-
-* [Visual Studio Code's Markdown Support](http://code.visualstudio.com/docs/languages/markdown)
-* [Markdown Syntax Reference](https://help.github.com/articles/markdown-basics/)
-
-**Enjoy!**
+Contributions are welcome! Please feel free to submit a Pull Request.
