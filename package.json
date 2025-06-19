@@ -2,7 +2,7 @@
   "name": "veld-language",
   "displayName": "Veld Language",
   "description": "the Veld language support for VSCodium/VS Code",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "publisher": "veld-dev",
   "repository": {
     "type": "git",
@@ -53,7 +53,7 @@
   "license": "ISC",
   "devDependencies": {
     "@types/node": "^24.0.3",
-    "@types/vscode": "^1.101.0",
+    "@types/vscode": "^1.100.3",
     "typescript": "^5.8.3"
   }
 }
