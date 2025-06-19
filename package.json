@@ -1,0 +1,25 @@
+{
+  "name": "veld-language",
+  "displayName": "Veld Language",
+  "description": "the Veld language support for VSCodium/VS Code",
+  "version": "0.0.1",
+  "engines": {
+    "vscode": "^1.60.0"
+  },
+  "categories": [
+    "Programming Languages"
+  ],
+  "contributes": {
+    "languages": [{
+      "id": "veld",
+      "aliases": ["Veld", "veld"],
+      "extensions": ["veld"],
+      "configuration": "./language-configuration.json"
+    }],
+    "grammars": [{
+      "language": "veld",
+      "scopeName": "source.veld",
+      "path": "./syntaxes/veld.tmLanguage.json"
+    }]
+  }
+}
