@@ -1,0 +1,7 @@
+
+# hi from Veld in VSCode!
+import std.io as io
+
+pub fn main() => do 
+    println("Hello, World!")
+end
