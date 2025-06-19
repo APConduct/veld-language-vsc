@@ -1,20 +1,66 @@
 {
 	"$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
 	"name": "Veld",
+	"scopeName": "source.veld",
 	"patterns": [
+		{
+			"include": "#comments"
+		},
+		{
+			"include": "#strings"
+		},
+		{
+			"include": "#numbers"
+		},
 		{
 			"include": "#keywords"
 		},
 		{
-			"include": "#strings"
+			"include": "#functions"
+		},
+		{
+			"include": "#types"
+		},
+		{
+			"include": "#operators"
+		},
+		{
+			"include": "#punctuation"
 		}
 	],
 	"repository": {
+		"comments": {
+			"patterns": [
+				{
+				"name": "comment.line.number-sign.veld",
+				"match": "#(?!\\[\\[).*$"
+				},
+				{
+				"name": "comment.block.veld",
+				"begin": "#\\[\\[",
+				"end": "\\]\\]"
+				}
+			]
+			},
 		"keywords": {
-			"patterns": [{
-				"name": "keyword.control.veld",
-				"match": "\\b(if|while|for|return)\\b"
-			}]
+			"patterns": [
+				{
+					"name": "keyword.control.veld",
+					"match": "\\b(if|else|then|while|for|in|do|match|where|return|break|continue)\\b"
+				},
+				{
+					"name": "keyword.other.veld",
+					"match": "\\b(fn|proc|let|var|const|mut|struct|kind|impl|end|mod|import|pub|as|enum|macro)\\b"
+				},
+				{
+					"name": "constant.language.veld",
+					"match": "\\b(true|false|nil)\\b"
+				}
+			]
+		},
+		"numbers": {
+			"name": "constant.numeric.veld",
+			"match": "\\b[0-9]+(\\.[0-9]+)?\\b"
 		},
 		"strings": {
 			"name": "string.quoted.double.veld",
@@ -26,7 +72,26 @@
 					"match": "\\\\."
 				}
 			]
+		},
+		 "functions": {
+			"patterns": [
+				{
+				"name": "entity.name.function.veld",
+				"match": "\\b([a-zA-Z_][a-zA-Z0-9_]*)\\s*(?=\\()"
+				}
+			]
+		},
+		"types": {
+			"name": "storage.type.veld",
+			"match": "\\b(i32|i64|f32|f64|bool|char|str|String)\\b"
+		},
+		"operators": {
+			"name": "keyword.operator.veld",
+			"match": "(=|\\+|-|\\*|/|==|!=|<|>|<=|>=|->|=>|\\^|%|\\+=|-=|\\*=|/=|\\|>|<-|@|~)"
+		},
+		"punctuation": {
+			"name": "punctuation.separator.veld",
+			"match": "(\\(|\\)|\\{|\\}|\\[|\\]|,|\\.|:|;)"
 		}
-	},
-	"scopeName": ""
+	}
 }
