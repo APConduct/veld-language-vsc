@@ -2,6 +2,14 @@
 (comment) @comment
 (multiline_comment) @comment
 
+; Doc comments via pattern matching
+((comment) @comment.documentation
+ (#match? @comment.documentation "^#\\|"))
+
+; Block doc comments
+((multiline_comment) @comment.documentation
+ (#match? @comment.documentation "^#\\|\\[\\["))
+
 ; Literals
 (string_literal) @string
 (number_literal) @number
